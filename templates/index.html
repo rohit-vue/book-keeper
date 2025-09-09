@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bookkeeper Assistant</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 40px; background-color: #f7f7f7; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 20px 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        label { display: block; margin-top: 20px; font-weight: bold; }
+        input[type="file"] { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 30px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Bookkeeper Assistant</h1>
+        <p>Upload your QBO exports. The AI will process them and provide a categorized Excel file.</p>
+        
+        <!-- The form no longer asks for the API key -->
+        <form action="/process" method="post" enctype="multipart/form-data">
+            <label for="transactions">QBO Transaction List (.xlsx):</label>
+            <input type="file" id="transactions" name="qbo_transactions_file" accept=".xlsx" required>
+
+            <label for="accounts">Chart of Accounts (.xlsx):</label>
+            <input type="file" id="accounts" name="qbo_accounts_file" accept=".xlsx" required>
+
+            <label for="classes">Class List (.xlsx):</label>
+            <input type="file" id="classes" name="qbo_classes_file" accept=".xlsx" required>
+
+            <button type="submit">✨ Run AI Categorization</button>
+        </form>
+    </div>
+</body>
+</html>

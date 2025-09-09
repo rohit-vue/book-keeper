@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Complete</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; background-color: #f7f7f7; }
+        .container { max-width: 90%; margin: auto; background: white; padding: 20px 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .download-button { display: inline-block; padding: 15px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; font-size: 18px; margin: 20px 0; }
+        .download-button:hover { background-color: #218838; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .table-container { max-height: 500px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Processing Complete!</h1>
+        <a href="/download/{{ result_id }}" class="download-button">📥 Download Enriched Excel File</a>
+        <h2>Results Preview</h2>
+        <div class="table-container">
+            {{ results_table | safe }}
+        </div>
+    </div>
+</body>
+</html>
